@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Silverblade5.Controls.MainMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:Silverblade5.Convertors"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Windows="clr-namespace:System.Windows;assembly=System.Windows.Controls" xmlns:Controls="clr-namespace:Silverblade5.Controls" d:DesignHeight="600"
+             d:DesignWidth="200"
+             DataContext="{Binding MainMenuViewModel,
+                                   Source={StaticResource IoC}}"
+             mc:Ignorable="d">
+  <UserControl.Resources>
+    <c:UriToImageConverter x:Key="uriToImageConverter" />
+  </UserControl.Resources>
+
+  <Grid x:Name="LayoutRoot" Background="White">
+
+    <!--
+        <i:Interaction.Triggers>
+        <i:EventTrigger EventName="ItemClicked">
+        <Command:EventToCommand Command="{Binding Path=NavigateCommand}" CommandParameterValue="{Binding Path=Uri}" />
+        </i:EventTrigger>
+        </i:Interaction.Triggers>
+    
+    ItemClicked="TreeviewMenu_ItemClicked"
+      -->
+    <Controls:LazyTreeView x:Name="treeviewMenu"
+                       ItemContainerStyle="{StaticResource HeaderMenuStyle}"
+                       ItemsSource="{Binding Path=Model}"
+                       Style="{StaticResource MainMenuStyle}"
+                       ItemClicked="TreeviewMenu_ItemClicked"
+                       Tag="{Binding Path=Uri}">
+      <Controls:LazyTreeView.ItemTemplate>
+        <Windows:HierarchicalDataTemplate ItemContainerStyle="{StaticResource SubMenuStyle}" 
+                                          ItemsSource="{Binding Path=Children}">
+          <StackPanel Orientation="Horizontal">
+            <Image Grid.Row="1"
+                   Grid.Column="1"
+                   Height="20"
+                   Margin="0,0,5,0"
+                   Source="{Binding Path=IconUri,
+                                    Converter={StaticResource uriToImageConverter}}" />
+            <TextBlock Text="{Binding Path=DisplayText}" />
+          </StackPanel>
+        </Windows:HierarchicalDataTemplate>
+      </Controls:LazyTreeView.ItemTemplate>
+    </Controls:LazyTreeView>
+  </Grid>
+</UserControl>

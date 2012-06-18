@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverblade5", "Silverblade5\Silverblade5.csproj", "{4639BBE4-1408-44C5-905C-B8430B4A633D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{862CFE45-65A8-49FC-A78E-FB1FF99663FF} = {862CFE45-65A8-49FC-A78E-FB1FF99663FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverblade5.Web", "Silverblade5.Web\Silverblade5.Web.csproj", "{862CFE45-65A8-49FC-A78E-FB1FF99663FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4639BBE4-1408-44C5-905C-B8430B4A633D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4639BBE4-1408-44C5-905C-B8430B4A633D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4639BBE4-1408-44C5-905C-B8430B4A633D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4639BBE4-1408-44C5-905C-B8430B4A633D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{862CFE45-65A8-49FC-A78E-FB1FF99663FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862CFE45-65A8-49FC-A78E-FB1FF99663FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862CFE45-65A8-49FC-A78E-FB1FF99663FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862CFE45-65A8-49FC-A78E-FB1FF99663FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
